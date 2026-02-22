@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy — FORTA Technologies</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg: #020c14;
+            --surface: #051520;
+            --border: #0d2535;
+            --border-soft: #071420;
+            --text: #cce4f0;
+            --text-muted: #2e5a72;
+            --text-dim: #5a8fa8;
+            --a1: #0e7a90;
+            --a2: #18b8d4;
+            --grad: linear-gradient(130deg, #0e7a90, #18b8d4);
+            --radius: 4px;
+            --max-w: 760px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, system-ui, sans-serif;
+            background:
+                radial-gradient(ellipse at 18% 0%, #04192a 0%, #020c14 55%),
+                radial-gradient(ellipse at 82% 100%, #031520 0%, #020c14 55%);
+            background-attachment: fixed;
+            color: var(--text);
+            font-size: 15px;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 700px 450px at 12% 15%, rgba(14, 122, 144, 0.08) 0%, transparent 70%),
+                radial-gradient(ellipse 500px 700px at 88% 75%, rgba(24, 184, 212, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        a {
+            color: var(--a2);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* NAV */
+        nav {
+            position: relative;
+            z-index: 1;
+            background: rgba(2, 12, 20, 0.88);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--a1), var(--a2), transparent);
+            opacity: 0.35;
+        }
+
+        .nav-inner {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand img {
+            height: 38px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-back {
+            font-size: 0.75rem;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            transition: color 0.2s;
+        }
+
+        .nav-back:hover {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        /* CONTENT */
+        main {
+            flex: 1;
+            position: relative;
+            z-index: 1;
+            padding: 72px 0 96px;
+        }
+
+        .container {
+            max-width: var(--max-w);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .page-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            background: var(--grad);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+
+        h1 {
+            font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+            font-weight: 300;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #cce4f0 0%, #7cc8e0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+
+        .updated {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            letter-spacing: 0.05em;
+            margin-bottom: 0;
+        }
+
+        .divider {
+            width: 40px;
+            height: 1px;
+            background: var(--grad);
+            margin: 24px 0 48px;
+        }
+
+        /* Policy sections */
+        .policy-section {
+            margin-bottom: 48px;
+        }
+
+        .policy-section h2 {
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--text-dim);
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-soft);
+        }
+
+        .policy-section p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.85;
+            margin-bottom: 12px;
+        }
+
+        .policy-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .policy-section ul {
+            margin: 10px 0 12px 16px;
+        }
+
+        .policy-section ul li {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 6px;
+        }
+
+        strong {
+            color: var(--text-dim);
+            font-weight: 500;
+        }
+
+        /* FOOTER */
+        footer {
+            position: relative;
+            z-index: 1;
+            padding: 28px 0;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, var(--border) 20%, var(--border) 80%, transparent 100%);
+        }
+
+        .footer-inner {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer-logo img {
+            height: 26px;
+            width: auto;
+            opacity: 0.5;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .footer-links a {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .footer-links a:hover {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .footer-copy {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            opacity: 0.4;
+        }
+
+        /* Entrance */
+        .container {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.7s ease 0.1s forwards;
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 640px) {
+            main {
+                padding: 48px 0 72px;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-inner">
+            <div class="nav-brand"><img src="logo.png" alt="FORTA Technologies" /></div>
+            <a href="index.html" class="nav-back">← Back to Home</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+
+            <p class="page-label">Legal · Privacy</p>
+            <h1>Privacy Policy</h1>
+            <p class="updated">Last updated: February 2026</p>
+            <div class="divider"></div>
+
+            <div class="policy-section">
+                <h2>1. Overview</h2>
+                <p>FORTA Technologies ("FORTA", "we", "our") is committed to protecting the privacy and confidentiality
+                    of information submitted through this institutional licensing framework. This Privacy Policy
+                    describes how we collect, use, store, and protect data submitted via the Expression of Interest form
+                    and general site interaction.</p>
+                <p>By submitting information through this site, you agree to the practices described in this policy.</p>
+            </div>
+
+            <div class="policy-section">
+                <h2>2. Information We Collect</h2>
+                <p>We collect only the information necessary to assess and process institutional licensing inquiries.
+                    This includes:</p>
+                <ul>
+                    <li><strong>Organization name</strong> — full legal entity name</li>
+                    <li><strong>Organization type</strong> — classification of the submitting entity</li>
+                    <li><strong>Jurisdiction</strong> — geographic region of operation</li>
+                    <li><strong>Infrastructure category</strong> — relevant sector classification</li>
+                    <li><strong>Deployment scope</strong> — intended scale of technology deployment</li>
+                    <li><strong>Capital allocation range</strong> — indicative budget band</li>
+                    <li><strong>Strategic objective</strong> — brief description of intended use</li>
+                    <li><strong>Institutional contact email</strong> — for correspondence only</li>
+                </ul>
+                <p>We do not collect personal identification documents, financial account details, or any data beyond
+                    what is listed above through this form.</p>
+            </div>
+
+            <div class="policy-section">
+                <h2>3. How We Use Your Information</h2>
+                <p>Information submitted through the EOI form is used exclusively for:</p>
+                <ul>
+                    <li>Assessing eligibility for FORTA institutional licensing</li>
+                    <li>Communicating qualification outcomes and term sheet issuance</li>
+                    <li>Internal records related to the licensing engagement</li>
+                </ul>
+                <p>We do not sell, rent, trade, or share your submitted information with third parties for marketing
+                    purposes.</p>
+            </div>
+
+            <div class="policy-section">
+                <h2>4. Data Storage & Security</h2>
+                <p>Form submissions are processed through Formspree, a third-party form handling service, and are
+                    transmitted via HTTPS. FORTA Technologies stores qualifying submissions in secured internal systems
+                    with access limited to the institutional licensing team.</p>
+                <p>Submissions that do not progress to a licensing engagement are deleted within <strong>90
+                        days</strong> of submission.</p>
+            </div>
+
+            <div class="policy-section">
+                <h2>5. Spam Protection</h2>
+                <p>This site uses Cloudflare Turnstile for automated spam prevention. Turnstile operates without
+                    presenting CAPTCHA challenges and processes minimal browser signals to distinguish human from
+                    automated submissions. Cloudflare's privacy policy governs data processed by the Turnstile widget.
+                </p>
+            </div>
+
+            <div class="policy-section">
+                <h2>6. Your Rights</h2>
+                <p>Depending on your jurisdiction, you may have rights to access, correct, or request deletion of
+                    information you have submitted. To exercise these rights, contact us at the email below. We will
+                    respond within <strong>30 days</strong>.</p>
+                <p>For submissions governed by GDPR (European Union) or India's DPDP Act, we honor all applicable
+                    statutory rights.</p>
+            </div>
+
+            <div class="policy-section">
+                <h2>7. Cookies & Tracking</h2>
+                <p>This site does not use analytics tracking cookies, advertising pixels, or any third-party tracking
+                    beyond what is necessary for form spam protection (Cloudflare Turnstile). No persistent
+                    identification cookies are set by FORTA Technologies.</p>
+            </div>
+
+            <div class="policy-section">
+                <h2>8. Contact</h2>
+                <p>For privacy-related inquiries, contact the FORTA Technologies data team at:<br>
+                    <a href="mailto:privacy@fortatechnologies.com">privacy@fortatechnologies.com</a>
+                </p>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-logo"><img src="logo.png" alt="FORTA Technologies" /></div>
+            <ul class="footer-links">
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms of Use</a></li>
+                <li><a href="index.html#eoi">EOI Form</a></li>
+            </ul>
+            <span class="footer-copy">© 2026 FORTA Technologies. All rights reserved.</span>
+        </div>
+    </footer>
+
+</body>
+
+</html>

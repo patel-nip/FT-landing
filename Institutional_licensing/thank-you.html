@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Submission Received — FORTA Technologies</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg: #020c14;
+            --surface: #051520;
+            --surface-2: #071c28;
+            --border: #0d2535;
+            --border-soft: #071420;
+            --text: #cce4f0;
+            --text-muted: #2e5a72;
+            --text-dim: #5a8fa8;
+            --a1: #0e7a90;
+            --a2: #18b8d4;
+            --grad: linear-gradient(130deg, #0e7a90, #18b8d4);
+            --radius: 4px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, system-ui, sans-serif;
+            background:
+                radial-gradient(ellipse at 18% 0%, #04192a 0%, #020c14 55%),
+                radial-gradient(ellipse at 82% 100%, #031520 0%, #020c14 55%);
+            background-attachment: fixed;
+            color: var(--text);
+            font-size: 15px;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 700px 450px at 12% 15%, rgba(14, 122, 144, 0.08) 0%, transparent 70%),
+                radial-gradient(ellipse 500px 700px at 88% 75%, rgba(24, 184, 212, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        a {
+            color: var(--a2);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* NAV */
+        nav {
+            position: relative;
+            z-index: 1;
+            background: rgba(2, 12, 20, 0.88);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--a1), var(--a2), transparent);
+            opacity: 0.35;
+        }
+
+        .nav-inner {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand img {
+            height: 38px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-back {
+            font-size: 0.75rem;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            transition: color 0.2s;
+        }
+
+        .nav-back:hover {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        /* MAIN */
+        main {
+            flex: 1;
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 24px;
+        }
+
+        .card {
+            max-width: 520px;
+            width: 100%;
+            text-align: center;
+            background: linear-gradient(145deg, var(--surface), #031018);
+            border: 1px solid var(--border);
+            padding: 56px 48px;
+            position: relative;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--a1), var(--a2), transparent);
+            opacity: 0.5;
+        }
+
+        /* Check icon — pure CSS */
+        .check-wrap {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            border: 1px solid rgba(14, 122, 144, 0.45);
+            background: rgba(14, 122, 144, 0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 28px;
+        }
+
+        .check-wrap svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .ref-code {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--a2);
+            border: 1px solid rgba(24, 184, 212, 0.25);
+            padding: 4px 12px;
+            border-radius: var(--radius);
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            font-size: clamp(1.4rem, 3vw, 1.9rem);
+            font-weight: 300;
+            letter-spacing: -0.01em;
+            background: linear-gradient(135deg, #cce4f0 0%, #7cc8e0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 16px;
+        }
+
+        p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+
+        .divider {
+            width: 40px;
+            height: 1px;
+            background: var(--grad);
+            margin: 28px auto;
+        }
+
+        .steps {
+            text-align: left;
+            margin-bottom: 36px;
+        }
+
+        .step {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            margin-bottom: 16px;
+        }
+
+        .step-num {
+            flex-shrink: 0;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            border: 1px solid rgba(14, 122, 144, 0.4);
+            font-size: 0.62rem;
+            font-weight: 600;
+            color: var(--a2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2px;
+        }
+
+        .step-text {
+            font-size: 0.83rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        .btn-home {
+            display: inline-block;
+            background: linear-gradient(130deg, var(--a1), var(--a2));
+            color: #fff;
+            padding: 10px 26px;
+            font-family: inherit;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            border-radius: var(--radius);
+            box-shadow: 0 4px 20px rgba(14, 122, 144, 0.2);
+            transition: opacity 0.2s;
+        }
+
+        .btn-home:hover {
+            opacity: 0.85;
+            text-decoration: none;
+        }
+
+        /* FOOTER */
+        footer {
+            position: relative;
+            z-index: 1;
+            padding: 28px 0;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, var(--border) 20%, var(--border) 80%, transparent 100%);
+        }
+
+        .footer-inner {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer-logo img {
+            height: 26px;
+            width: auto;
+            opacity: 0.5;
+        }
+
+        .footer-copy {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            opacity: 0.4;
+        }
+
+        /* Entrance animation */
+        .card {
+            opacity: 0;
+            transform: translateY(24px);
+            animation: fadeUp 0.75s ease 0.15s forwards;
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 540px) {
+            .card {
+                padding: 36px 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-inner">
+            <div class="nav-brand"><img src="logo.png" alt="FORTA Technologies" /></div>
+            <a href="index.html" class="nav-back">← Back to Home</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="card">
+
+            <div class="check-wrap">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 13l4 4L19 7" stroke="#18b8d4" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </div>
+
+            <div class="ref-code">EOI Received</div>
+            <h1>Submission Confirmed</h1>
+            <p>
+                Your Expression of Interest has been received by the FORTA Technologies
+                institutional licensing team.
+            </p>
+            <p>
+                A member of our team will review your submission and respond to your
+                institutional contact email within <strong style="color:var(--text-dim)">48 business hours</strong>.
+            </p>
+
+            <div class="divider"></div>
+
+            <div class="steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-text">Review your inbox — a confirmation has been sent to your institutional email.
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-text">Our team will assess your submission against FORTA licensing criteria.</div>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-text">If qualified, you will receive a draft term sheet within the stated timeline.
+                    </div>
+                </div>
+            </div>
+
+            <a href="index.html" class="btn-home">Return to Home</a>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-logo"><img src="logo.png" alt="FORTA Technologies" /></div>
+            <span class="footer-copy">© 2026 FORTA Technologies. All rights reserved.</span>
+        </div>
+    </footer>
+
+</body>
+
+</html>
+
+
